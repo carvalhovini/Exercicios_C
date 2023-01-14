@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int n, m, i, j, L, R, v, p, k, A[100];
+    printf("Insira o tamanho do array A: ");
+    scanf("%d", &n);
+    printf("Insira os elementos do array A: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &A[i]);
+    }
+    printf("Insira o numero de instrucoes: ");
+    scanf("%d", &m);
+    for (i = 0; i < m; i++) {
+        printf("Insira a instrucao L, R, v, p: ");
+        scanf("%d%d%d%d", &L, &R, &v, &p);
+        k = 0;
+        for (j = L - 1; j <= R - 1; j++) {
+            if (A[j] < v) {
+                k++;
+            }
+        }
+        A[p - 1] = (A[p - 1] * k) / (R - L + 1);
+    }
+    printf("Novo array A: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", A[i]);
+    }
+    return 0;
+}
