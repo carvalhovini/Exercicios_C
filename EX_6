@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int i, j, num_groups;
+    long group;
+    int max_consec_broken = 0;
+    int consec_broken = 0;
+
+    printf("Insira o numero de grupos: ");
+    scanf("%d", &num_groups);
+
+    for (i = 0; i < num_groups; i++) {
+        printf("Insira o codigo binario do grupo %d: ", i+1);
+        scanf("%ld", &group);
+
+        max_consec_broken = 0;
+        consec_broken = 0;
+
+        for (j = 0; group > 0; j++) {
+            if (group % 10 == 1) {
+                consec_broken++;
+                if (consec_broken > max_consec_broken) {
+                    max_consec_broken = consec_broken;
+                }
+            } else {
+                consec_broken = 0;
+            }
+            group = group / 10;
+        }
+
+        printf("Numero de lâmpadas a serem trocadas no grupo %d: %d\n", i+1, max_consec_broken);
+    }
+
+    return 0;
+}
