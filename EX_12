@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int cmp(const void *a, const void *b) {
+    int x = *(int *)a;
+    int y = *(int *)b;
+    if(x%2 == 0 && y%2 != 0) {
+        return -1;
+    }
+    if(x%2 != 0 && y%2 == 0) {
+        return 1;
+    }
+    if(x%2 == 0 && y%2 == 0) {
+        return x-y;
+    }
+    if(x%2 != 0 && y%2 != 0) {
+        return y-x;
+    }
+    return 0;
+}
+
+int main() {
+    int n, i;
+    scanf("%d", &n);
+    int arr[n];
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    qsort(arr, n, sizeof(int), cmp);
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
