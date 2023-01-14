@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int x, y, i, sum = 0;
+    printf("Insira dois numeros inteiros: ");
+    scanf("%d%d", &x, &y);
+
+    for (i = x; i <= y; i++) {
+        if (i % 13 != 0) {
+            sum += i;
+        }
+    }
+
+    printf("Soma dos numeros nao divisiveis por 13 entre %d e %d: %d\n", x, y, sum);
+    return 0;
+}
