@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <iostream>
+#include <string.h>  
+#include <string> 
+
+int main() {
+    char player1[20], player2[20];
+
+    printf("Insira a escolha do jogador 1: ");
+    scanf("%s", player1);
+
+    printf("Insira a escolha do jogador 2: ");
+    scanf("%s", player2);
+
+    if (strcmp(player1, player2) == 0) {
+        printf("De novo!");
+    } else if ((strcmp(player1, "Spock") == 0 && strcmp(player2, "tesoura") == 0) ||
+               (strcmp(player1, "tesoura") == 0 && strcmp(player2, "lagarto") == 0) ||
+               (strcmp(player1, "lagarto") == 0 && strcmp(player2, "papel") == 0) ||
+               (strcmp(player1, "papel") == 0 && strcmp(player2, "Spock") == 0) ||
+               (strcmp(player1, "Spock") == 0 && strcmp(player2, "pedra") == 0) ||
+               (strcmp(player1, "pedra") == 0 && strcmp(player2, "tesoura") == 0)) {
+        printf("Bazinga!");
+    } else {
+        printf("Raj trapaceou!");
+    }
+
+    return 0;
+}
