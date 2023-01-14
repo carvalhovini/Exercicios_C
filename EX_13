@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    char operacao;
+    double num1, num2, resultado;
+
+    printf("Escolha uma operação (+, -, *, /, ^, s) : ");
+    scanf("%c", &operacao);
+
+    printf("Insira dois números: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    switch(operacao) {
+        case '+':
+            resultado = num1 + num2;
+            break;
+        case '-':
+            resultado = num1 - num2;
+            break;
+        case '*':
+            resultado = num1 * num2;
+            break;
+        case '/':
+            resultado = num1 / num2;
+            break;
+        case '^':
+            resultado = pow(num1, num2);
+            break;
+        case 's':
+            resultado = sin(num1);
+            break;
+        default:
+            printf("Operação inválida.\n");
+    }
+
+    printf("Resultado : %.2lf\n", resultado);
+    return 0;
+}
