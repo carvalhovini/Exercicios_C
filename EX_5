@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    char move1[20], move2[20], move3[20];
+    char subject[3][20] = {"RPG", "Heavy metal", "Mitologia grega"};
+    int subject_index = 0;
+
+    printf("Insira o movimento de Dodo: ");
+    scanf("%s", move1);
+
+    printf("Insira o movimento de Leo: ");
+    scanf("%s", move2);
+
+    printf("Insira o movimento de Pepper: ");
+    scanf("%s", move3);
+
+    if ((strcmp(move1, "pedra") == 0 && strcmp(move2, "papel") == 0) || 
+        (strcmp(move2, "pedra") == 0 && strcmp(move3, "papel") == 0) ||
+        (strcmp(move1, "papel") == 0 && strcmp(move3, "pedra") == 0)) {
+        subject_index = 0;
+    } else if ((strcmp(move1, "papel") == 0 && strcmp(move2, "tesoura") == 0) || 
+               (strcmp(move2, "papel") == 0 && strcmp(move3, "tesoura") == 0) ||
+               (strcmp(move1, "tesoura") == 0 && strcmp(move3, "papel") == 0)) {
+        subject_index = 1;
+    } else {
+        subject_index = 2;
+    }
+
+    printf("Assunto da sessao de hoje: %s\n", subject[subject_index]);
+    return 0;
+}
