@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[10000], c;
+    int len = 0, i, j, k;
+
+    while (scanf("%c", &c) != EOF) {
+        if (c == '<') {
+            c = getchar();
+            if (c == 'b' || c == 'B') {
+                c = getchar();
+                if (c == 'r' || c == 'R') {
+                    printf("\n");
+                }
+            }
+            if (c == 'h' || c == 'H') {
+                c = getchar();
+                if (c == 'r' || c == 'R') {
+                    printf("\n");
+                    for (i = 0; i < 80; i++) {
+                        printf("-");
+                    }
+                    printf("\n");
+                }
+            }
+            while (c != '>') {
+                c = getchar();
+            }
+        }
+        else if (c != '\n' && c != '\t' && c != ' ') {
+            s[len++] = c;
+        }
+        else if (c == '\n' || c == '\t' || c == ' ') {
+            if (len > 0) {
+                if (len > 80) {
+                    for (i = 0; i < len; i += 80) {
+                        for (j = i; j < i + 80; j++) {
+                            printf("%c", s[j]);
+                        }
+                        printf("\n");
+                    }
+                }
+                else {
+                    for (i = 0; i < len; i++) {
+                        printf("%c", s[i]);
+                    }
+                    printf("\n");
+                }
+                len = 0;
+            }
+        }
+    }
+    return 0;
+}
