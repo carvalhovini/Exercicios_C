@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    double A, B, C;
+
+    scanf("%lf %lf %lf", &A, &B, &C);
+
+    double triangulo = (A * C) / 2;
+    printf("%.3lf\n", triangulo);
+
+    double pi = 3.14159;
+    double circulo = pi * C * C;
+    printf("%.3lf\n", circulo);
+
+    double trapezio = ((A + B) * C) / 2;
+    printf("%.3lf\n", trapezio);
+
+    double quadrado = B * B;
+    printf("%.3lf\n", quadrado);
+
+    double retangulo = A * B;
+    printf("%.3lf\n", retangulo);
+
+    return 0;
+}
