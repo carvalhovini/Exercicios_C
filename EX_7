@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    char cpf[15];
+    int i;
+
+    printf("Insira o CPF: ");
+    scanf("%s", cpf);
+
+    for (i = 0; i < 14; i++) {
+        if (i == 3 || i == 7 || i == 11) {
+            continue;
+        }
+        printf("%c\n", cpf[i]);
+    }
+    return 0;
+}
