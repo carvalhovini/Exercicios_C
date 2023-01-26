@@ -1,0 +1,14 @@
+#include <opencv2/opencv.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace cv;
+
+int main(int argc, char** argv) {
+    Mat img = imread("image.jpg", IMREAD_GRAYSCALE);
+    Mat img_threshold;
+    threshold(img, img_threshold, 128, 255, THRESH_BINARY);
+    imshow("Original Image", img);
+    imshow("Thresholded Image", img_threshold);
+    waitKey(0);
+    return 0;
+}
